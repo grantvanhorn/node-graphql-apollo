@@ -1,0 +1,29 @@
+{
+  "name": "node-graphql-apollo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grantvanhorn/node-graphql-apollo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grantvanhorn/node-graphql-apollo/issues"
+  },
+  "homepage": "https://github.com/grantvanhorn/node-graphql-apollo#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "nodemon": "^1.19.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.0.0"
+  }
+}
