@@ -6,12 +6,28 @@ import { ApolloServer, gql } from 'apollo-server-express';
 const app = express();
 app.use(cors());
 
+const users = {
+  1: {
+    id: '1',
+    username: 'Grant Van Horn',
+  },
+  2: {
+    id: '2',
+    username: 'Robert Green',
+  },
+};
+
+const me = users[1];
+
 const schema = gql`
   type Query {
     me: User
+    user(id: ID!): User
+    users: [User!]
   }
 
   type User {
+    id: ID!
     username: String!
   }
 `;
@@ -19,10 +35,14 @@ const schema = gql`
 const resolvers = {
   Query: {
     me: () => {
-      return {
-        username: 'Grant Van Horn',
-      };
+      return me;
     },
+    user: (parent, { id }) => {
+      return users[id];
+    },
+    users: () => {
+      return Object.values(users);
+    }
   },
 };
 
