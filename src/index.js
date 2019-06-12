@@ -44,6 +44,10 @@ const resolvers = {
       return Object.values(users);
     }
   },
+
+  User: {
+    username: user => `${user.firstname} ${user.lastname}`,
+  },
 };
 
 const server = new ApolloServer({
